@@ -1,16 +1,19 @@
 local check_collision = require("collision")
-local save_game = require("services.save-game")
 local load_game = require("services.load-game")
-local shake_screen = require("shake-screen")
+local load_image = require("services.load-image")
 local player_controlls = require("player_controlls")
+local save_game = require("services.save-game")
+local shake_screen = require("shake-screen")
+
 local coins = {}
 local player = {
 	x = 100,
 	y = 100,
 	size = 25,
-	image = love.graphics.newImage("face.png"),
+	image = load_image("assets/face.png"),
 	score = 0,
 }
+
 local shake = {
 	duration = 0,
 	wait = 0,

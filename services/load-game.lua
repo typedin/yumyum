@@ -1,4 +1,6 @@
 local lume = require("services.lume")
+local load_image = require("services.load-image")
+
 local function load_game(player, coins)
 	if love.filesystem.getInfo("savedata.txt") then
 		local data = lume.deserialize(love.filesystem.read("savedata.txt"))
@@ -14,7 +16,7 @@ local function load_game(player, coins)
 				x = v.x,
 				y = v.y,
 				size = 10,
-				image = love.graphics.newImage("dollar.png"),
+				image = load_image("assets/dollar.png"),
 			}
 		end
 	else
@@ -24,7 +26,7 @@ local function load_game(player, coins)
 				x = love.math.random(50, 650),
 				y = love.math.random(50, 450),
 				size = 10,
-				image = love.graphics.newImage("dollar.png"),
+				image = load_image("assets/dollar.png"),
 			})
 		end
 	end
