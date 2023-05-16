@@ -1,4 +1,4 @@
-local player_controll = function(player, dt)
+local player_controls = function(player, dt)
 	if love.keyboard.isDown("left") then
 		player.x = player.x - 200 * dt
 	elseif love.keyboard.isDown("right") then
@@ -12,4 +12,4 @@ local player_controll = function(player, dt)
 	end
 end
 
-return player_controll
+return player_controls

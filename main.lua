@@ -1,9 +1,9 @@
-local check_collision = require("collision")
+local check_collision = require("services.collision")
 local load_game = require("services.load-game")
 local load_image = require("services.load-image")
-local player_controlls = require("player_controlls")
+local player_controls = require("services.player_controls")
 local save_game = require("services.save-game")
-local shake_screen = require("shake-screen")
+local shake_screen = require("services.shake-screen")
 
 local coins = {}
 local player = {
@@ -34,8 +34,8 @@ function love.load()
 end
 
 function love.update(dt)
-	shake_screen(shake, dt)
-	player_controlls(player, dt)
+	shake_screen(shake, dt, love)
+	player_controls(player, dt)
 
 	if love.keyboard.isDown("escape") then
 		love.event.quit()

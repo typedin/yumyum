@@ -1,4 +1,4 @@
-local shake_screen = function(shake, dt)
+local shake_screen = function(shake, dt, love)
 	if shake.duration > 0 then
 		shake.duration = shake.duration - dt
 		if shake.wait > 0 then
